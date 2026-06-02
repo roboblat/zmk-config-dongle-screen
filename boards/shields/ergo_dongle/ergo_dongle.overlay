@@ -68,22 +68,3 @@
 &trackpad_listener {
     status = "okay";
 };
-
-/*
- * ---- Screen geometry override for the 135x240 panel ----
- * YADS' dongle_screen module defines &st7789 for a 240x280 panel. Our panel is
- * 135x240, so override the size/offsets here (this overlay loads with the
- * ergo_dongle shield, alongside dongle_screen). Values are a known-good config
- * for 1.14" 135x240 ST7789V panels (x-offset 53, y-offset 40, plus the panel-
- * specific vcom/colmod/cmd2en tweaks). If the image is shifted or color is
- * inverted after flashing, these are the numbers to nudge.
- */
-&st7789 {
-    width = <135>;
-    height = <240>;
-    x-offset = <53>;
-    y-offset = <40>;
-    vcom = <0x28>;
-    colmod = <0x55>;
-    cmd2en-param = [ 5a 69 02 00 ];
-};
