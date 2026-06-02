@@ -1,0 +1,22 @@
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: AYM1607
+      url-base: https://github.com/AYM1607
+    - name: janpfischer
+      url-base: https://github.com/janpfischer
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+    - name: zmk-driver-azoteq-iqs5xx
+      remote: AYM1607
+      revision: main
+    # YADS dongle screen (ST7789V). upgrade-4.1 branch = ZMK main / Zephyr 4.1.
+    - name: zmk-dongle-screen
+      remote: janpfischer
+      revision: upgrade-4.1
+  self:
+    path: config
